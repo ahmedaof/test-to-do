@@ -53,3 +53,13 @@ exports.update = (req, res) => {
                 res.status(500).json({ error: 'Error retrieving to-do', details: err });
               });
             }
+
+            exports.getAllToDo = (req, res) => {
+                Todo.find()
+                  .then((todos) => {
+                    res.json(todos);
+                  })
+                  .catch((err) => {
+                    res.status(500).json({ error: 'Error retrieving to-dos', details: err });
+                  });
+                }

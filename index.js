@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://yoaqSMGdXN7ONlN1:yoaqSMGdXN7ONlN1@cluster0.wbcru
 
 
 
-const { create, update , deleteTodo, getTodo } = require('./controller/todo');
+const { create, update , deleteTodo, getTodo, getAllToDo } = require('./controller/todo');
 
 app.use(express.json());
 
@@ -31,3 +31,4 @@ app.delete('/todos/:id', deleteTodo);
 
 app.get('/todos/:id', getTodo);
 
+app.get('/todos', getAllToDo);
